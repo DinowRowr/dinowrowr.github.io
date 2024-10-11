@@ -1,0 +1,140 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navBar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.navBar a:hover {
+    background-color: #ba2626;
+    border-radius: 5px;
+}
+
+/* Resume Container */
+.container {
+    max-width: 1200px; /* Adjusted for better consistency */
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 36px; /* Adjusted for consistency */
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px; /* Consistent with other sections */
+}
+
+/* Section Styling */
+.section {
+    margin-bottom: 20px;
+}
+
+.section p {
+    margin: 0;
+    font-size: 18px; /* Consistent text size */
+    color: #555;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.section li {
+    margin-bottom: 10px;
+    font-size: 18px; /* Consistent text size */
+}
+
+/* Button Styles */
+.download-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #b82b2b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #aa1616;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+
+    .section h1 {
+        font-size: 32px; /* Adjusted for tablets and smaller desktops */
+    }
+
+    .section p {
+        font-size: 18px; /* Consistent with index.css */
+    }
+
+    .download-button {
+        font-size: 16px; /* Adjusted for tablets */
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navBar {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center;
+    }
+
+    .navBar a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .section h1 {
+        font-size: 28px; /* Adjusted for mobile devices */
+    }
+
+    .section p {
+        font-size: 16px; /* Adjusted text size for mobile */
+    }
+
+    .download-button {
+        font-size: 14px; /* Adjusted button font size for mobile */
+        padding: 10px 20px;
+    }
+}

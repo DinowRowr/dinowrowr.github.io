@@ -1,0 +1,136 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navBar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 15px;
+}
+
+.navBar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.navBar a:hover {
+    background-color: #ba2626;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px; /* Updated max-width */
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f9; /* Added background color */
+    border-radius: 8px; /* Added border radius */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+/* Section Headings */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 36px; /* Updated font size */
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px; /* Updated font size */
+    text-align: left; /* Added text-align */
+}
+
+/* Project Section Styling */
+.project {
+    margin-bottom: 30px;
+    text-align: left;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove inline spacing */
+    margin: 0 auto; /* Center images */
+}
+
+/* Button Styles */
+.download-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    background-color: #b82b2b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #aa1616;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+
+    .project {
+        margin: 20px 0;
+    }
+
+    .download-button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navBar {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center;
+    }
+
+    .navBar a {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+
+    .project {
+        margin: 20px 0;
+    }
+
+    .download-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
