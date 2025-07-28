@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Certificates</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificates</title>
     <link rel="stylesheet" href="../css/index.css" />
 </head>
 
 <body>
+
     <header>
         <nav>
             <ul class="navbar">
@@ -22,11 +23,96 @@
         </nav>
     </header>
 
-    <section class="section">
-        <h2>My Certificates</h2>
-        <br>
-        <h2>Still Under Development</h2>
-    </section>
+    <h2> <br>
+        <center>My Certificates</center>
+    </h2>
+
+    <h3>School Certificates</h3>
+    <div class="cert-grid">
+        <div class="cert-card"><img src="../img/PreparatoryDiploma.jpeg" alt="Preparatory Diploma">
+            <div class="cert-caption">Preparatory Diploma</div>
+        </div>
+        <div class="cert-card"><img src="../img/ElementaryDiploma.jpeg" alt="Elementary Diploma">
+            <div class="cert-caption">Elementary Diploma</div>
+        </div>
+        <div class="cert-card"><img src="../img/HighSchoolDiploma.jpeg" alt="High School Diploma">
+            <div class="cert-caption">High School Diploma</div>
+        </div>
+        <div class="cert-card"><img src="../img/SHSDiploma.jpeg" alt="SHS Diploma">
+            <div class="cert-caption">SHS Diploma</div>
+        </div>
+        <div class="cert-card"><img src="../img/SHSwithHighHonors.jpeg" alt="SHS with High Honors">
+            <div class="cert-caption">SHS with High Honors</div>
+        </div>
+        <div class="cert-card"><img src="../img/Cert of Recog.jpeg" alt="COSRAW Certificate">
+            <div class="cert-caption">COSRAW Certificate of Recognition</div>
+        </div>
+        <div class="cert-card"><img src="../img/Quiroga.jpg" alt="Internship Certificate">
+            <div class="cert-caption">Internship Certificate</div>
+        </div>
+    </div>
+
+    <h3>Online Courses Certificates</h3>
+    <div class="cert-grid">
+        <div class="cert-card"><img
+                src="../img/CertificateOfCompletion_CSS Fundamentals Unlock the Power of Web Styling_page-0001.jpg"
+                alt="CSS Fundamentals">
+            <div class="cert-caption">CSS Fundamentals</div>
+        </div>
+        <div class="cert-card"><img src="../img/CertificateOfCompletion_HandsOn Introduction JavaScript_page-0001.jpg"
+                alt="JS Intro">
+            <div class="cert-caption">Hands-On JavaScript</div>
+        </div>
+        <div class="cert-card"><img
+                src="../img/CertificateOfCompletion_Introduction to Web Design and Development_pages-to-jpg-0001.jpg"
+                alt="Web Design">
+            <div class="cert-caption">Intro to Web Design & Dev</div>
+        </div>
+        <div class="cert-card"><img src="../img/CertificateOfCompletion_Introduction to HTML,CSS,JS.jpg"
+                alt="Intro to HTML/CSS/JS">
+            <div class="cert-caption">Intro to HTML, CSS & JS</div>
+        </div>
+        <div class="cert-card"><img src="../img/CertificateOfCompletion_Introduction to Software Engineering.jpg"
+                alt="Software Engineering">
+            <div class="cert-caption">Intro to Software Engineering</div>
+        </div>
+        <div class="cert-card"><img src="../img/CertificateOfCompletion_Python for Data Science AI Dev.jpg"
+                alt="Python for Data Science">
+            <div class="cert-caption">Python for Data Science, AI</div>
+        </div>
+        <div class="cert-card"><img
+                src="../img/HP Life_Cert Of Completion_Data Science & Analytics_pages-to-jpg-0001.jpg"
+                alt="HP Life Cert">
+            <div class="cert-caption">HP LIFE - Data Science & Analytics</div>
+        </div>
+    </div>
+
+    <!-- Modal for image zoom -->
+    <div id="imgModal" class="modal">
+        <span class="close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        const modal = document.getElementById("imgModal");
+        const modalImg = document.getElementById("modalImage");
+
+        document.querySelectorAll('.cert-card img').forEach(img => {
+            img.addEventListener('click', function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+            });
+        });
+
+        // Close modal when clicked outside the image
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
