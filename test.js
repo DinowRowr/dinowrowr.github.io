@@ -1,5 +1,6 @@
 // Universal fade-in function
 function fadeInElements() {
+  document.body.classList.remove("fade-out"); // remove fade-out
   document.body.classList.add("fade-in");
 
   // Optional elements — only if they exist
