@@ -1,11 +1,21 @@
-// Fade in on load
-window.onload = () => {
+// Universal fade-in function
+function fadeInElements() {
   document.body.classList.add("fade-in");
+
+  // Optional elements — only if they exist
   document.getElementById("intro")?.classList.add("show");
   document.getElementById("profilePic")?.classList.add("show");
-};
+}
 
-// Smooth back navigation
+// Fade in on normal load
+window.addEventListener("load", fadeInElements);
+
+// Fade in when coming back via browser back/forward (bfcache)
+window.addEventListener("pageshow", (event) => {
+  fadeInElements();
+});
+
+// Smooth page transitions for links
 document.querySelectorAll(".page-link").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
