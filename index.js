@@ -18,47 +18,25 @@ startBtn.addEventListener("click", () => {
   }, 500);
 });
 
-// Ensure body fades in normally
-function fadeInBody() {
+// Fade in on load
+window.onload = () => {
   document.body.classList.add("fade-in");
-  document.body.classList.remove("fade-out");
   document.getElementById("intro")?.classList.add("show");
   document.getElementById("profilePic")?.classList.add("show");
-}
+};
 
-// Normal load
-window.addEventListener("load", fadeInBody);
-
-// Handle back/forward navigation
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    // Always redirect back to index.html if not already there
-    if (!window.location.pathname.endsWith("index.html") && window.location.pathname !== "/") {
-      window.location.href = "index.html";
-      return;
-    }
-    fadeInBody();
-  }
-});
-
-// Smooth navigation for page links
+// Smooth back navigation
 document.querySelectorAll(".page-link").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     const target = btn.getAttribute("data-target");
-
-    document.body.classList.remove("fade-in");
     document.body.classList.add("fade-out");
-
-    const transitionDuration = parseFloat(
-      getComputedStyle(document.body).transitionDuration
-    ) * 1000;
-
     setTimeout(() => {
       window.location.href = target;
-    }, transitionDuration);
+    }, 500);
   });
 });
+
 
 
 
