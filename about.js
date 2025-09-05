@@ -1,20 +1,3 @@
-// Fade in on load
-window.onload = () => {
-  document.body.classList.add("fade-in");
-};
-
-// Smooth back navigation
-document.querySelectorAll(".page-link").forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = btn.getAttribute("data-target");
-    document.body.classList.add("fade-out");
-    setTimeout(() => {
-      window.location.href = target;
-    }, 500);
-  });
-});
-
 // Modal logic
 const items = document.querySelectorAll(".timeline-item");
 const modals = document.querySelectorAll(".modal");
@@ -109,5 +92,3 @@ closeBtns.forEach((btn) => {
     btn.closest(".modal").style.display = "none";
   });
 });
-
-
