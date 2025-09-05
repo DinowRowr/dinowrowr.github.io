@@ -18,6 +18,12 @@ startBtn.addEventListener("click", () => {
   }, 500);
 });
 
+document.body.classList.add("fade-start");
+requestAnimationFrame(() => {
+  document.body.classList.remove("fade-start");
+  document.body.classList.add("fade-in");
+});
+
 // Fade in on load
 window.onload = () => {
   document.body.classList.add("fade-in");
@@ -36,3 +42,4 @@ document.querySelectorAll(".page-link").forEach((btn) => {
     }, 500);
   });
 });
+
