@@ -4,7 +4,6 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f9f9f9;
   text-align: center;
-  opacity: 0;
   transition: opacity 0.6s ease;
 }
 
@@ -146,5 +145,6 @@ body.fade-out {
     align-items: center;
   }
 }
+
 
 
