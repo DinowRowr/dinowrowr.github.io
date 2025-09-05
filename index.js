@@ -17,3 +17,12 @@ startBtn.addEventListener("click", () => {
     setTimeout(() => menu.classList.add("show"), 50);
   }, 500);
 });
+
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  const link = document.createElement("a");
+  link.href = "pdf/CV.pdf"; // path to your PDF
+  link.download = "Quiroga's CV.pdf"; // file name for download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+});
