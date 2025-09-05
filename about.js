@@ -1,17 +1,39 @@
-// Fade in on load
-window.onload = () => {
+// Function to fade in elements
+function fadeInBody() {
   document.body.classList.add("fade-in");
-};
+  document.body.classList.remove("fade-out"); // ensure fade-out is removed
+  document.getElementById("intro")?.classList.add("show");
+  document.getElementById("profilePic")?.classList.add("show");
+}
 
-// Smooth back navigation
+// Fade in on normal load
+window.addEventListener("load", fadeInBody);
+
+// Fade in when coming back from bfcache (back/forward navigation)
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    fadeInBody();
+  }
+});
+
+// Smooth navigation for .page-link buttons
 document.querySelectorAll(".page-link").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
     const target = btn.getAttribute("data-target");
+
+    // Add fade-out
+    document.body.classList.remove("fade-in");
     document.body.classList.add("fade-out");
+
+    // Wait for CSS transition to complete before navigating
+    const transitionDuration = parseFloat(
+      getComputedStyle(document.body).transitionDuration
+    ) * 1000; // convert from seconds to ms
+
     setTimeout(() => {
       window.location.href = target;
-    }, 500);
+    }, transitionDuration);
   });
 });
 
@@ -109,3 +131,4 @@ closeBtns.forEach((btn) => {
     btn.closest(".modal").style.display = "none";
   });
 });
+
