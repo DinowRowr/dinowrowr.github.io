@@ -1,0 +1,148 @@
+/* DEFAULT STYLES */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* HOME SECTION */
+.home {
+  padding: 10px;
+}
+
+.home h1 {
+  font-size: 2em;
+}
+
+.home p {
+  font-size: 1.2em;
+}
+
+/* Profile Image */
+.profile-img {
+  width: 25%;
+  border-radius: 50%;
+  margin-top: 75px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Buttons */
+.start-btn {
+  margin: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #555;
+}
+
+/* Menu Buttons */
+.menu-buttons {
+  margin-top: 20px;
+}
+
+.menu-buttons button {
+  margin: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-buttons button:hover {
+  background: #555;
+}
+
+/* Fade-in utility */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ----------------- */
+/* RESPONSIVE STYLES */
+/* ----------------- */
+
+/* Tablets & small screens */
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 1.5em;
+  }
+
+  .home p {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .profile-img {
+    width: 40%;
+    margin-top: 40px;
+  }
+
+  .start-btn,
+  .menu-buttons button {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .home h1 {
+    font-size: 1.3em;
+  }
+
+  .home p {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+
+  .profile-img {
+    width: 60%;
+    margin-top: 30px;
+  }
+
+  .start-btn,
+  .menu-buttons button {
+    width: 80%;
+    max-width: 250px;
+    font-size: 0.85em;
+  }
+
+  .menu-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

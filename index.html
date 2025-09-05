@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Home Section -->
+
+    <section class="home">
+        <img class="profile-img fade-in" id="profilePic" src="img/me.JPG" alt="myIntroPic">
+
+        <!-- First screen -->
+        <div id="intro" class="fade-in">
+            <h1>Hello! I'm Dinothelo P. Quiroga!</h1>
+            <p>IT | Web Developer | Software Engineer</p>
+            <button class="start-btn" id="startBtn">Let's Start</button>
+        </div>
+
+        <!-- Second screen (hidden) -->
+        <div id="menu" class="hidden fade-in">
+            <h2>What do you want?</h2>
+            <div class="menu-buttons">
+                <button class="page-link" data-target="about.html">About Dino</button>
+                <button class="page-link" data-target="pdf/CV.pdf">Resume/CV</button>
+                <button class="page-link" data-target="certificates.html">Certificates</button>
+                <button class="page-link" data-target="projects.html">Projects</button>
+                <button class="page-link" data-target="contact.html">Contact</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9f9f9;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+body.fade-out {
+  opacity: 0;
+}
+
+button {
+  margin-top: 50px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* CONTACTS SECTION */
+.contacts {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.contacts h1 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* CONTACT INFO GRID */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  gap: 25px;
+  justify-items: center;
+  margin: 30px 0;
+}
+
+.contact-info p {
+  position: relative;
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Style links wrapping icons */
+.contact-info a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Style icons */
+.contact-info i {
+  font-size: 32px;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover effect on icons */
+.contact-info a:hover i {
+  transform: scale(1.2);
+  color: #4caf50;
+}
+
+/* Tooltip captions */
+.contact-info p::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Show tooltip on hover (either p or link) */
+.contact-info p:hover::after,
+.contact-info a:hover + ::after {
+  opacity: 1;
+}
+
+/* REFERENCES */
+.references {
+  margin-top: 40px;
+}
+
+.references h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.references-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.references-card img {
+  width: 100%;
+  max-width: 120px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+.references-card:hover {
+  transform: translateY(-5px);
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .contact-info {
+    gap: 15px;
+  }
+
+  .contact-info i {
+    font-size: 26px;
+  }
+
+  .references-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Modal base */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+.close:hover {
+  color: #e74c3c;
+}
+
+/* Modal body layout */
+.modal-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.modal-body img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Text section */
+.modal-text {
+  flex: 1;
+}
+
+.modal-text h2 {
+  margin: 0 0 10px;
+  font-size: 1.6em;
+  color: #333;
+}
+
+.modal-text p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* icon link */
+.modal-text a {
+  display: inline-block;
+  font-size: 3rem;
+  color: #333;
+  margin-top: 10px;
+  transition: transform 0.3s, color 0.3s;
+  padding: 20px;
+}
+.modal-text a:hover {
+  transform: scale(1.2);
+  color: #4caf50;
+}
+
+/* Copy text */
+
+.copy-text {
+  position: relative;
+  display: inline-block;
+}
+
+.copy-text i {
+  font-size: 32px;
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s;
+}
+
+/* Default tooltip from data-caption */
+.copy-text::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.copy-text:hover::after {
+  opacity: 1;
+}
+
+/* When copied, show 'Copied!' */
+.copy-text.copied::after {
+  content: "Copied!";
+  color: #4caf50;
+  opacity: 1;
+}
+
+.copy-text.copied i {
+  color: #4caf50;
+  transform: scale(1.2);
+}
+
+/* --- RESPONSIVE --- */
+
+/* Phones and small devices */
+@media (max-width: 480px) {
+  .contacts h1 {
+    font-size: 1.6em;
+  }
+
+  .contact-info {
+    grid-template-columns: repeat(3, 1fr); /* tighter grid */
+    gap: 15px;
+  }
+
+  .contact-info i {
+    font-size: 24px;
+  }
+
+  .contact-info p::after {
+    font-size: 0.7rem;
+    bottom: -20px;
+  }
+
+  .references-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .references-card img {
+    max-width: 100px;
+  }
+
+  /* Modal responsive */
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-body img {
+    width: 180px;
+    margin-bottom: 15px;
+  }
+
+  .modal-text h2 {
+    font-size: 1.3em;
+  }
+
+  .modal-text p {
+    font-size: 0.9rem;
+  }
+
+  .modal-text a {
+    font-size: 2rem;
+    padding: 10px;
+  }
+}
+
+/* General mobile & small tablets */
+@media (max-width: 768px) {
+  .contacts {
+    padding: 30px 15px;
+  }
+
+  /* Contact info grid: 2x4 layout with spacing */
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    grid-template-rows: repeat(4, auto); /* 4 rows */
+    gap: 25px;
+    justify-items: center;
+    padding: 20px 0; /* space above & below icons */
+  }
+
+  .contact-info p {
+    font-size: 14px;
+  }
+
+  .contact-info i {
+    font-size: 28px;
+  }
+
+  /* References section */
+  .references h2 {
+    font-size: 1.6em;
+  }
+
+  .references-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .references-card img {
+    max-width: 110px;
+  }
+
+  /* Modal refinement */
+  .modal-content {
+    width: 95%; /* take almost full width */
+    height: auto; /* allow content to expand naturally */
+    max-height: 90vh; /* limit height so it never overflows screen */
+    margin: 5vh auto; /* centered vertically with breathing room */
+    padding: 20px; /* space inside modal */
+    box-sizing: border-box;
+    overflow-y: auto; /* scroll inside modal if content too tall */
+  }
+
+  .modal-body {
+    flex-direction: column; /* stack image & text */
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .modal-body img {
+    width: 80%;
+    max-width: 280px; /* prevent oversized image */
+    height: auto;
+  }
+
+  .modal-text {
+    width: 100%;
+  }
+}
