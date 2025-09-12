@@ -14,6 +14,14 @@
     
       gtag('config', 'G-56M2M0P9GG');
     </script>
+    <script>
+      // Replace "my-portfolio" with any unique name
+      fetch('https://api.countapi.xyz/hit/my-portfolio.github.io/visits')
+        .then(res => res.json())
+        .then(res => {
+          document.getElementById('visits').innerText = res.value;
+        });
+    </script>
 </head>
 
 <body>
@@ -44,11 +52,12 @@
             </div>
         </div>
     </section>
-    <img src="https://counter.seku.su/cmoe?name=my-portfolio" alt="Visitor counter">
+    <p>Number of Visitors: <span id="visits"></span></p>
 
     <script src="index.js"></script>
     <script src="test.js"></script>
 </body>
 </html>
+
 
 
